@@ -64,4 +64,9 @@ The available log levels are:
 * `critical`: Critical error messages, indicating a severe error that might lead to program termination.
 
 ## Contributions
+
 Contributions to this logging module are welcome! If you find any issues or have suggestions for improvements, feel free to create an issue or a pull request on the repository.
+
+## License
+
+This logging module is open-source and released under the MIT License. See the [LICENSE](./LICENSE.MD) file for more details.
