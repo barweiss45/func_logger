@@ -1,4 +1,5 @@
 import logging
+from typing import Union
 
 
 '''
@@ -15,7 +16,7 @@ def func(x,y):
 '''
 
 
-def log_configure_map(level: str) -> int:
+def log_configure_map(level: str) -> Union[int, callable]:
     """
     Map a string representation of log level to the corresponding integer value.
 
@@ -42,7 +43,8 @@ def log_configure_map(level: str) -> int:
 
     return log_level_map[level.lower()]
 
-def log_output_map(level: str) -> logging.Level:
+
+def log_output_map(level: str) -> Union[int, callable]:
     """
     Map a string representation of log level to the corresponding logging level object.
 
@@ -51,7 +53,7 @@ def log_output_map(level: str) -> logging.Level:
             Possible values: 'debug', 'info', 'warning', 'error', 'critical'.
 
     Returns:
-        logging.Level: The corresponding logging level object.
+        Union[int, callable]: The corresponding logging level object (int or callable).
 
     Raises:
         ValueError: If the input 'level' is not a valid log level.
