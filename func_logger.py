@@ -140,14 +140,12 @@ def log_output(level='info'):
             Returns:
                 Any: The return value of the decorated function.
 
-            The wrapper function logs the function call details, including the
-            input arguments and output, after calling the original function.
+            The wrapper function logs the function call detail after calling the original function.
             The log messages will be printed based on the provided log level.
             """
             log = log_output_map(level)
             result = func(*args, **kwargs)
-            file_path = func.__module__.__file__
-            log(f"Function 'Function '{func.__name__}' from module '{file_path}' called with arguments: {args}, {kwargs}. Output: {result}")
+            log(f"Function 'Function '{func.__name__}' called with arguments: {args}, {kwargs}. Output: {result}")
             return result
         return wrapper
     return decorator
